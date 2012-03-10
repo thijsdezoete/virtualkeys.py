@@ -389,6 +389,13 @@ def typer(string):
             win32api.keybd_event(VK_CODE['left_shift'],0 ,win32con.KEYEVENTF_KEYUP ,0)
             win32api.keybd_event(VK_CODE['['],0 ,win32con.KEYEVENTF_KEYUP ,0)
 
+        elif i == '?':
+            win32api.keybd_event(VK_CODE['left_shift'], 0,0,0)
+            win32api.keybd_event(VK_CODE['/'], 0,0,0)
+            time.sleep(.05)
+            win32api.keybd_event(VK_CODE['left_shift'],0 ,win32con.KEYEVENTF_KEYUP ,0)
+            win32api.keybd_event(VK_CODE['/'],0 ,win32con.KEYEVENTF_KEYUP ,0)
+
         elif i == ':':
             win32api.keybd_event(VK_CODE['left_shift'], 0,0,0)
             win32api.keybd_event(VK_CODE[';'], 0,0,0)
