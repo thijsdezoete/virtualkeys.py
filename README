@@ -7,7 +7,8 @@ it easier for beginners to use.
 Rather than calling win32api.keybd_event(dwFlag,dx,dy,dwData) and filling it
 with the proper key codes (which you would have to look up on
 http://msdn.microsoft.com/en-us/library/windows/desktop/dd375731(v=vs.85).aspx
-I've wrapped everything in a series of functions called called press().
+unless you have somekind of super memory.) I've wrapped everything in a series 
+of functions called called press().
 
 To virtually push a key -- that is, one press, one release -- all you need to
 call is press(*args), where the argument is a string containing the key you wish
@@ -16,14 +17,17 @@ key names passed to it.
 
 All keyboard functions in this module follow this theme.
 
-The only one that doesn't is 'typer()'. This accepts whole words as arguments.
-e.g. 'Hello World!' which it will interpret and press the appropriate key.
+The only one that doesn't is 'typer()'. This accepts whole words (or series of 
+words) as arguments. e.g. 'Hello World!' which it will loop through, interpret, 
+and press the appropriate key.
 
 It's just more convenient than using press() and seperating each letter by a
-comma.
+comma. Note that this version alos catches special characters such as 
+'~!@#$%^&*()_+=-[]{};':",.<>/?'. I got a little too lazy to add them into the 
+press() function. 
 
-Note that a few commonly used windows functions have been premade for use-- such
-as Copy and Paste.
+I've added a few commonly used functions such as Copy and Paste for direct 
+calling. 
 
 Finally, all mouse functions (excluding the MOUSE_WHEEL) follow this argment
 style: Mouse('button'). Where button is 'left', 'middle', or 'right'.
@@ -35,3 +39,4 @@ Note: ALL VK_CODE strings are lower case and follow the word_word style. e.g.
 'caps_lock', 'left_arrow', 'print_screen', etc..
 
 
+Note: Music my Pitx
